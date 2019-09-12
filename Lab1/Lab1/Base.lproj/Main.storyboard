@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lab1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTX-uq-dB0">
+                                <rect key="frame" x="60" y="122" width="81" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <state key="normal" title="Bailee"/>
+                                <connections>
+                                    <action selector="chooseArt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="58z-qQ-aIT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Girlfriend Michelle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqa-Od-rc4">
+                                <rect key="frame" x="38" y="60" width="244" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGZ-eH-Dvg">
+                                <rect key="frame" x="167" y="122" width="93" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <state key="normal" title="Kamiar"/>
+                                <connections>
+                                    <action selector="chooseArt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NIT-ps-GS0"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Michelle" translatesAutoresizingMaskIntoConstraints="NO" id="hIG-wP-je5">
+                                <rect key="frame" x="46.5" y="203" width="227" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hIG-wP-je5" secondAttribute="height" multiplier="1:1" id="DlC-6S-KFx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vTX-uq-dB0" firstAttribute="top" secondItem="lqa-Od-rc4" secondAttribute="bottom" constant="30" id="3Uc-s8-euA"/>
+                            <constraint firstItem="hIG-wP-je5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-50" id="Bos-8H-8z7"/>
+                            <constraint firstItem="vTX-uq-dB0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="JpN-KI-gur"/>
+                            <constraint firstItem="hGZ-eH-Dvg" firstAttribute="top" secondItem="lqa-Od-rc4" secondAttribute="bottom" constant="30" id="QNX-ob-8Bj"/>
+                            <constraint firstItem="hIG-wP-je5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="183" id="REP-ml-qso"/>
+                            <constraint firstItem="lqa-Od-rc4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Tec-xz-h32"/>
+                            <constraint firstItem="hGZ-eH-Dvg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vTX-uq-dB0" secondAttribute="trailing" constant="8" symbolic="YES" id="Tiu-qJ-i19"/>
+                            <constraint firstItem="hIG-wP-je5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cRr-EZ-CTD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hGZ-eH-Dvg" secondAttribute="trailing" constant="60" id="d8O-4F-Jlg"/>
+                            <constraint firstItem="lqa-Od-rc4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iFA-IA-rzO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="titletop" destination="lqa-Od-rc4" id="aQc-Cj-rn1"/>
+                        <outlet property="viewImage" destination="hIG-wP-je5" id="PTf-A3-Tza"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Michelle" width="811" height="1212.3333740234375"/>
+    </resources>
+</document>
