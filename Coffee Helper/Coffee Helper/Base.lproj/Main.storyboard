@@ -24,53 +24,85 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coffee - g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-0K-vOJ">
-                                <rect key="frame" x="43.5" y="273" width="78" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Water - oz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-QH-8BU">
-                                <rect key="frame" x="200.5" y="258" width="80" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VOI-Gd-ko5">
-                                <rect key="frame" x="211" y="220" width="59" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-C5-8K8">
-                                <rect key="frame" x="128" y="312" width="64" height="30"/>
-                                <state key="normal" title="Calculate"/>
-                                <connections>
-                                    <action selector="calcButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7zH-uu-PhT"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4i-Hq-Tgc">
+                            <textField opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4i-Hq-Tgc">
                                 <rect key="frame" x="50" y="220" width="64" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coffee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-0K-vOJ">
+                                <rect key="frame" x="56.5" y="258" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Water " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-QH-8BU">
+                                <rect key="frame" x="200.5" y="258" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VOI-Gd-ko5">
+                                <rect key="frame" x="211" y="220" width="59" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-C5-8K8">
+                                <rect key="frame" x="128" y="295" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calcButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7zH-uu-PhT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAg-4J-TSS">
+                                <rect key="frame" x="132" y="220" width="60" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="352-dP-Y8S">
+                                <rect key="frame" x="140" y="258" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="grams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAy-tJ-7Ip">
+                                <rect key="frame" x="38.5" y="191" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="grams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOA-Ue-028">
+                                <rect key="frame" x="233.5" y="191" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pOA-Ue-028" firstAttribute="centerX" secondItem="VOI-Gd-ko5" secondAttribute="centerX" id="4fp-s7-nbH"/>
                             <constraint firstItem="3ab-QH-8BU" firstAttribute="top" secondItem="VOI-Gd-ko5" secondAttribute="bottom" constant="8" id="9Vm-8R-AFz"/>
                             <constraint firstItem="WkO-uB-2uF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="B9h-nE-mDi"/>
                             <constraint firstItem="ybf-0K-vOJ" firstAttribute="centerX" secondItem="V4i-Hq-Tgc" secondAttribute="centerX" id="FJf-R2-Bh9"/>
                             <constraint firstItem="WkO-uB-2uF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FMX-VE-PoC"/>
                             <constraint firstItem="V4i-Hq-Tgc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ln3-Ki-9XO"/>
+                            <constraint firstItem="352-dP-Y8S" firstAttribute="top" secondItem="kAg-4J-TSS" secondAttribute="bottom" constant="8" id="NFT-tK-uo9"/>
+                            <constraint firstItem="VOI-Gd-ko5" firstAttribute="top" secondItem="pOA-Ue-028" secondAttribute="bottom" constant="8" id="OJb-Dd-bVE"/>
                             <constraint firstItem="VOI-Gd-ko5" firstAttribute="width" secondItem="V4i-Hq-Tgc" secondAttribute="width" id="PHk-pq-0Zl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VOI-Gd-ko5" secondAttribute="trailing" constant="50" id="SV2-RL-b0Y"/>
                             <constraint firstItem="QdU-C5-8K8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SiE-9e-RQL"/>
+                            <constraint firstItem="kAg-4J-TSS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UM5-zS-Y2Q"/>
+                            <constraint firstItem="V4i-Hq-Tgc" firstAttribute="top" secondItem="pAy-tJ-7Ip" secondAttribute="bottom" constant="8" id="VSd-Ri-oqf"/>
                             <constraint firstItem="ybf-0K-vOJ" firstAttribute="top" secondItem="V4i-Hq-Tgc" secondAttribute="bottom" constant="8" id="XtE-uR-4p2"/>
                             <constraint firstItem="V4i-Hq-Tgc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="aKv-kg-xGf"/>
-                            <constraint firstItem="QdU-C5-8K8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="292" id="jOS-U0-UOv"/>
+                            <constraint firstItem="pAy-tJ-7Ip" firstAttribute="centerX" secondItem="V4i-Hq-Tgc" secondAttribute="centerX" id="d1s-wc-Aob"/>
+                            <constraint firstItem="352-dP-Y8S" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="h3j-lf-jyO"/>
+                            <constraint firstItem="QdU-C5-8K8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="jOS-U0-UOv"/>
                             <constraint firstItem="VOI-Gd-ko5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="l1N-bQ-T9o"/>
                             <constraint firstItem="3ab-QH-8BU" firstAttribute="centerX" secondItem="VOI-Gd-ko5" secondAttribute="centerX" id="q4z-sm-6hE"/>
+                            <constraint firstItem="kAg-4J-TSS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="vPT-1Y-rB4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
@@ -80,7 +112,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="coffeeFinal" destination="pAy-tJ-7Ip" id="7f8-QG-aBb"/>
                         <outlet property="coffeeValue" destination="V4i-Hq-Tgc" id="PbM-4d-WJD"/>
+                        <outlet property="cupsValue" destination="kAg-4J-TSS" id="BQH-Cj-cuc"/>
+                        <outlet property="waterFinal" destination="pOA-Ue-028" id="KQp-ZS-tn6"/>
                         <outlet property="waterValue" destination="VOI-Gd-ko5" id="VTl-RO-wSp"/>
                     </connections>
                 </viewController>
