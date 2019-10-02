@@ -79,10 +79,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateTipTotals()
     }
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        checkAmount.resignFirstResponder()
+        tipPercent.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         checkAmount.delegate=self
         tipPercent.delegate=self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
