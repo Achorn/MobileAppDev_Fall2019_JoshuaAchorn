@@ -9,7 +9,58 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var timer = Timer()
+    var minutes: Int = 0
+    var seconds: Int = 0
+    var fractions: Int = 0
+    
+    var stopwatchString: String = ""
+    var startStopWatch: Bool = true
+    
+    
+    @IBOutlet weak var stopwatchLabel: UILabel!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var startstopButton: UIButton!
+    
+    
+    @IBAction func startStop(_ sender: AnyObject) {
+        if startStopWatch == true{
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: Selector(("updateStopwatch")), userInfo: nil, repeats: true)
+            startStopWatch = false
+            startstopButton.setTitle("Stop", for: .normal)
+        }else{
+            timer.invalidate()
+            startStopWatch = true
+            startstopButton.setTitle("Start", for: .normal)
+        }
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        fractions = 0
+        seconds = 0
+        minutes = 0
+        stopwatchString = "00:00.00"
+    }
+    
+    func updateStopWatch(){
+        fractions += 1
+        if fractions == 100{
+            seconds += 1
+            fractions = 0
+        }
+        if seconds == 60{
+            minutes += 1
+            seconds = 0
+        }
+        let fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
+        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+        
+        stopwatchString = "\(minutesString):\(secondsString).\(fractionsString)"
+        stopwatchLabel.text = stopwatchString
+    }
+    
+    
     @IBOutlet weak var coffeeValue: UITextField!
     @IBOutlet weak var waterValue: UITextField!
     @IBOutlet weak var cupsValue: UITextField!
@@ -18,6 +69,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        stopwatchLabel.text = "00:00.00"
     }
 
 
@@ -30,6 +82,14 @@ class ViewController: UIViewController {
         coffeeValue.resignFirstResponder()
         coffeeValue.resignFirstResponder()
     }
+    
+    //Table View methods
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        var cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
+//    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 3
+//    }
     
 }
 

@@ -68,15 +68,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcs-Uv-vRZ">
-                                <rect key="frame" x="59" y="393" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="63" y="393" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Hb-LQ-Km6"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwm-C0-VYc">
-                                <rect key="frame" x="109" y="314" width="102" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Um-yG-CaP">
+                                <rect key="frame" x="224" y="393" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Or-gc-vWk"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-C5-8K8">
                                 <rect key="frame" x="128" y="270" width="64" height="30"/>
                                 <state key="normal" title="Calculate"/>
@@ -84,10 +88,12 @@
                                     <action selector="calcButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7zH-uu-PhT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Um-yG-CaP">
-                                <rect key="frame" x="218" y="393" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwm-C0-VYc">
+                                <rect key="frame" x="0.0" y="299" width="320" height="86"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="51"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -115,7 +121,7 @@
                             <constraint firstItem="QdU-C5-8K8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="jOS-U0-UOv"/>
                             <constraint firstItem="VOI-Gd-ko5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="l1N-bQ-T9o"/>
                             <constraint firstItem="3ab-QH-8BU" firstAttribute="centerX" secondItem="VOI-Gd-ko5" secondAttribute="centerX" id="q4z-sm-6hE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wwm-C0-VYc" secondAttribute="bottom" constant="145" id="qbz-rq-7Ff"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wwm-C0-VYc" secondAttribute="bottom" constant="120" id="qbz-rq-7Ff"/>
                             <constraint firstItem="kAg-4J-TSS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="vPT-1Y-rB4"/>
                             <constraint firstItem="4Um-yG-CaP" firstAttribute="centerX" secondItem="VOI-Gd-ko5" secondAttribute="centerX" id="xez-hL-fjg"/>
                         </constraints>
@@ -130,6 +136,9 @@
                         <outlet property="coffeeFinal" destination="pAy-tJ-7Ip" id="7f8-QG-aBb"/>
                         <outlet property="coffeeValue" destination="V4i-Hq-Tgc" id="PbM-4d-WJD"/>
                         <outlet property="cupsValue" destination="kAg-4J-TSS" id="BQH-Cj-cuc"/>
+                        <outlet property="resetButton" destination="jcs-Uv-vRZ" id="z29-Ia-GBt"/>
+                        <outlet property="startstopButton" destination="4Um-yG-CaP" id="wBj-BO-y1U"/>
+                        <outlet property="stopwatchLabel" destination="Wwm-C0-VYc" id="yDL-4E-eOj"/>
                         <outlet property="waterFinal" destination="pOA-Ue-028" id="KQp-ZS-tn6"/>
                         <outlet property="waterValue" destination="VOI-Gd-ko5" id="VTl-RO-wSp"/>
                     </connections>

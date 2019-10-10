@@ -11,7 +11,7 @@
 		56BCD05F2342D2EC0083751B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BCD05E2342D2EC0083751B /* ViewController.swift */; };
 		56BCD0622342D2EC0083751B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56BCD0602342D2EC0083751B /* Main.storyboard */; };
 		56BCD0642342D2EE0083751B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BCD0632342D2EE0083751B /* Assets.xcassets */; };
-		56BCD0672342D2EE0083751B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56BCD0652342D2EE0083751B /* LaunchScreen.storyboard */; };
+		56BCD0672342D2EE0083751B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56BCD0652342D2EE0083751B /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = ("great-tasting-coffee", ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +90,9 @@
 		56BCD0512342D2EC0083751B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					"great-tasting-coffee",
+				);
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Joshua Achorn";
