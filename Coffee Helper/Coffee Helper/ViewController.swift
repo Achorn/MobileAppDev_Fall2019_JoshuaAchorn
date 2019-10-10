@@ -28,6 +28,15 @@ class ViewController: UIViewController {
             stopButton.isEnabled = true
             startstopButton.isEnabled = false
         }
+    }
+    
+    @IBAction func stopDidTap(_ sender: Any) {
+        resetButton.isEnabled = true
+        startstopButton.isEnabled = true
+        stopButton.isEnabled = false
+        
+        isTimerRunning = false
+        timer.invalidate()
         
     }
     
@@ -53,6 +62,12 @@ class ViewController: UIViewController {
     
     @IBAction func reset(_ sender: Any) {
         print("reset did tap")
+        isTimerRunning = false
+        counter = 0.0
+        stopwatchLabel.text = "00:00.0"
+        resetButton.isEnabled = false
+        startstopButton.isEnabled = true
+        stopButton.isEnabled = false
     }
     
     
