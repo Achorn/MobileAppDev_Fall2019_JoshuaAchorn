@@ -9,55 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     var timer = Timer()
-    var minutes: Int = 0
-    var seconds: Int = 0
-    var fractions: Int = 0
-    
-    var stopwatchString: String = ""
-    var startStopWatch: Bool = true
-    
+    var isTimerRunning: Bool = false
+    var counter = 0.0
     
     @IBOutlet weak var stopwatchLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var startstopButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
-    
-    @IBAction func startStop(_ sender: AnyObject) {
-        if startStopWatch == true{
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: Selector(("updateStopwatch")), userInfo: nil, repeats: true)
-            startStopWatch = false
-            startstopButton.setTitle("Stop", for: .normal)
-        }else{
-            timer.invalidate()
-            startStopWatch = true
-            startstopButton.setTitle("Start", for: .normal)
+    @IBAction func startStop(_ sender: Any) {
+        print("start did tap")
+        if !isTimerRunning{
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
+            isTimerRunning = true
+            resetButton.isEnabled = true
+            stopButton.isEnabled = true
+            startstopButton.isEnabled = false
         }
+        
+    }
+    
+    @objc func runTimer(){
+        print("Timer updated!")
+        counter += 0.1
+        stopwatchLabel.text = "\(counter)"
+        let flooredCounter = Int(floor(counter))
+//        let hour = flooredCounter / 3600
+        let minute = (flooredCounter % 3600) / 60
+        var minuteString = "\(minute)"
+        if minute < 10 {
+            minuteString = "0\(minute)"
+        }
+        let second = (flooredCounter % 3600) % 60
+        var secondString = "\(second)"
+        if second < 10 {
+            secondString = "0\(second)"
+        }
+        let decisecond = String(format: "%.1f",counter).components(separatedBy: ".").last!
+        stopwatchLabel.text = "\(minuteString):\(secondString).\(decisecond)"
     }
     
     @IBAction func reset(_ sender: Any) {
-        fractions = 0
-        seconds = 0
-        minutes = 0
-        stopwatchString = "00:00.00"
-    }
-    
-    func updateStopWatch(){
-        fractions += 1
-        if fractions == 100{
-            seconds += 1
-            fractions = 0
-        }
-        if seconds == 60{
-            minutes += 1
-            seconds = 0
-        }
-        let fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
-        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        
-        stopwatchString = "\(minutesString):\(secondsString).\(fractionsString)"
-        stopwatchLabel.text = stopwatchString
+        print("reset did tap")
     }
     
     
@@ -69,6 +64,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        resetButton.isEnabled = false
+        stopButton.isEnabled = false
+        startstopButton.isEnabled = true
         stopwatchLabel.text = "00:00.00"
     }
 
@@ -83,13 +81,7 @@ class ViewController: UIViewController {
         coffeeValue.resignFirstResponder()
     }
     
-    //Table View methods
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        var cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 3
-//    }
+   
     
 }
 

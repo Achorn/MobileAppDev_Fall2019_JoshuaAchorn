@@ -94,12 +94,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-CE-efI">
+                                <rect key="frame" x="144" y="393" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pOA-Ue-028" firstAttribute="centerX" secondItem="VOI-Gd-ko5" secondAttribute="centerX" id="4fp-s7-nbH"/>
                             <constraint firstItem="3ab-QH-8BU" firstAttribute="top" secondItem="VOI-Gd-ko5" secondAttribute="bottom" constant="8" id="9Vm-8R-AFz"/>
                             <constraint firstItem="WkO-uB-2uF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="B9h-nE-mDi"/>
+                            <constraint firstItem="Sbz-CE-efI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CgY-4H-lKb"/>
                             <constraint firstItem="ybf-0K-vOJ" firstAttribute="centerX" secondItem="V4i-Hq-Tgc" secondAttribute="centerX" id="FJf-R2-Bh9"/>
                             <constraint firstItem="WkO-uB-2uF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FMX-VE-PoC"/>
                             <constraint firstItem="V4i-Hq-Tgc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ln3-Ki-9XO"/>
@@ -115,6 +120,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Um-yG-CaP" secondAttribute="bottom" constant="57" id="YeK-ck-Ndb"/>
                             <constraint firstItem="V4i-Hq-Tgc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="aKv-kg-xGf"/>
                             <constraint firstItem="pAy-tJ-7Ip" firstAttribute="centerX" secondItem="V4i-Hq-Tgc" secondAttribute="centerX" id="d1s-wc-Aob"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sbz-CE-efI" secondAttribute="bottom" constant="57" id="g13-ZK-pt3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jcs-Uv-vRZ" secondAttribute="bottom" constant="57" id="gH7-F7-Qod"/>
                             <constraint firstItem="Wwm-C0-VYc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gNQ-fp-MeV"/>
                             <constraint firstItem="352-dP-Y8S" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="h3j-lf-jyO"/>
@@ -138,6 +144,7 @@
                         <outlet property="cupsValue" destination="kAg-4J-TSS" id="BQH-Cj-cuc"/>
                         <outlet property="resetButton" destination="jcs-Uv-vRZ" id="z29-Ia-GBt"/>
                         <outlet property="startstopButton" destination="4Um-yG-CaP" id="wBj-BO-y1U"/>
+                        <outlet property="stopButton" destination="Sbz-CE-efI" id="aGL-jX-zPL"/>
                         <outlet property="stopwatchLabel" destination="Wwm-C0-VYc" id="yDL-4E-eOj"/>
                         <outlet property="waterFinal" destination="pOA-Ue-028" id="KQp-ZS-tn6"/>
                         <outlet property="waterValue" destination="VOI-Gd-ko5" id="VTl-RO-wSp"/>
