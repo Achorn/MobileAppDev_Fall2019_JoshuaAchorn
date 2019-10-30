@@ -14,17 +14,32 @@ class ViewController: UIViewController {
     var isTimerRunning: Bool = false
     var counter = 0.0
     
+    @IBOutlet weak var cupLabel: UILabel!
     @IBOutlet weak var stopwatchLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var startstopButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var cupSetterOutlet: UIStepper!
+    @IBOutlet weak var ratiostepperOutlet: UIStepper!
+    @IBOutlet weak var ratioLabel: UILabel!
+    
+    @IBAction func cupStepper(_ sender: UIStepper) {
+        cupLabel.text = "\(Int(sender.value)) cup/s"
+        calcButton(self)
+    }
+    
+    @IBAction func ratioStepper(_ sender: UIStepper){
+        ratioLabel.text = "1/\(Int(sender.value))"
+        calcButton(self)
+    }
+    
     
     @IBAction func startStop(_ sender: Any) {
         print("start did tap")
         if !isTimerRunning{
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
             isTimerRunning = true
-            resetButton.isEnabled = true
+            resetButton.isEnabled = false
             stopButton.isEnabled = true
             startstopButton.isEnabled = false
         }
@@ -73,7 +88,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var coffeeValue: UITextField!
     @IBOutlet weak var waterValue: UITextField!
-    @IBOutlet weak var cupsValue: UITextField!
     @IBOutlet weak var waterFinal: UILabel!
     @IBOutlet weak var coffeeFinal: UILabel!
     override func viewDidLoad() {
@@ -83,14 +97,17 @@ class ViewController: UIViewController {
         stopButton.isEnabled = false
         startstopButton.isEnabled = true
         stopwatchLabel.text = "00:00.00"
+        resetButton.layer.cornerRadius = resetButton.frame.height/2
+        resetButton.backgroundColor = UIColor.darkGray
     }
 
 
     @IBAction func calcButton(_ sender: Any) {
         let coffee = Int(coffeeValue.text!)!
-        let cups = Int(cupsValue.text!)!
-        waterValue.text =  "\(coffee * 16)"
-        waterFinal.text = "\(coffee * 16 * cups) g"
+        let cups = Int(cupSetterOutlet.value)
+        let ratio = Int(ratiostepperOutlet.value)
+        waterValue.text =  "\(coffee * ratio)"
+        waterFinal.text = "\(coffee * ratio * cups) g"
         coffeeFinal.text = "\(coffee * cups) g"
         coffeeValue.resignFirstResponder()
         coffeeValue.resignFirstResponder()
