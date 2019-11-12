@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AutumnThemeDark" parent="Theme.AppCompat.Light.DarkActionBar" >
+    <style name="SportsThemeDark" parent="Theme.AppCompat.Light.DarkActionBar" >
         <item name="android:colorPrimary">@color/primaryColor</item>
         <item name="android:colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="android:colorAccent">@color/secondaryLightColor</item>
