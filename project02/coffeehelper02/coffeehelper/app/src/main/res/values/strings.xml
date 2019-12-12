@@ -2,9 +2,9 @@
     <string name="app_name">coffee helper</string>
     <string name="stop">Stop</string>
     <string name="start">Start</string>
-    <string name="_00_00_00_000">00:00:00:000</string>
     <string name="calculate">Calculate</string>
     <string name="_17">17</string>
     <string name="_17g">17g</string>
     <string name="_272g">272g</string>
+    <string name="OO_OO">0:00:00</string>
 </resources>

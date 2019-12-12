@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
@@ -17,7 +19,6 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTvTime;
     private Button mButtonStart;
     private Button mButtonStop;
 
@@ -30,18 +31,19 @@ public class MainActivity extends AppCompatActivity {
     private Switch cups;
 
     //for timer
-    private Context mContext;
-    private Chronometer mChronometer;
-    private Thread mThreadChrono;
-    private boolean classRunChecker = false;
-    private long timerChecker = 0;
+    private Chronometer chronometer;
+    private boolean isRunning;
+    private long savedTime;
+
+    public MainActivity() {
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        savedInstanceState.get()
 
         //ratio calc
         cofText = findViewById(R.id.etCoffee);
@@ -73,39 +75,30 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+//      chronometer was made by using the android chronometer widget found here:
+//       https://developer.android.com/reference/android/widget/Chronometer
 
-
-        mTvTime = findViewById(R.id.tv_time);
         mButtonStart = findViewById(R.id.btnStart);
         mButtonStop = findViewById(R.id.btnStop);
-
-        mContext = this;
-        mChronometer = new Chronometer(mContext);
-        mThreadChrono = new Thread(mChronometer);
-        mThreadChrono.start();
-        mChronometer.setmStartTime(timerChecker);
-        mChronometer.setmIsRunning(classRunChecker);
+        chronometer = findViewById(R.id.chronometer);
 
 
-
+        if(isRunning){ //check if saved instance has a running chronometer
+            chronometer.setBase(savedTime);
+            chronometer.start();
+        }
 
 
         mButtonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                if(!isRunning){
+                    chronometer.setFormat("%s");
+                    chronometer.setBase(SystemClock.elapsedRealtime());
+                    savedTime = chronometer.getBase();
+                    chronometer.start();
 
-//                mThreadChrono.interrupt();
-//                mThreadChrono = null;
-//                mChronometer = null;
-
-//                mChronometer = new Chronometer(mContext);
-//                mThreadChrono = new Thread(mChronometer);
-
-                if(!mChronometer.ismIsRunning()){
-                    mChronometer = new Chronometer(mContext);
-                    mThreadChrono = new Thread(mChronometer);
-                    mThreadChrono.start();
-                    mChronometer.start();
+                    isRunning = true;
                 }
             }
         });
@@ -113,23 +106,10 @@ public class MainActivity extends AppCompatActivity {
         mButtonStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mChronometer.ismIsRunning()){
-                    mChronometer.stop();
-                    mThreadChrono.interrupt();
-                    mThreadChrono = null;
-                    mChronometer = null;
-                    mChronometer = new Chronometer(mContext);
-
+                if(isRunning) {
+                    chronometer.stop();
+                    isRunning = false;
                 }
-            }
-        });
-    }
-
-    public void updateTimerText(final String time){
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                mTvTime.setText(time);
             }
         });
     }
@@ -142,9 +122,12 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("cofAns", ansCof.getText().toString());
         outState.putString("watAns", ansWa.getText().toString());
 
-//        timer
-        outState.putLong("time",  mChronometer.getmStartTime());
-        outState.putBoolean("running", mChronometer.ismIsRunning());
+
+
+        outState.putLong("time", savedTime);
+        outState.putBoolean("running", isRunning);
+
+
     }
 
     @Override
@@ -153,10 +136,8 @@ public class MainActivity extends AppCompatActivity {
         cofText.setText(savedInstanceState.getString("coffee"));
         ansCof.setText(savedInstanceState.getString("cofAns"));
         ansWa.setText(savedInstanceState.getString("watAns"));
-
-        timerChecker = savedInstanceState.getLong("time");
-        classRunChecker = savedInstanceState.getBoolean("running");
-//        mChronometer.setmStartTime(savedInstanceState.getLong("time"));
-//        mChronometer.setmIsRunning(savedInstanceState.getBoolean("running"));
+//
+        isRunning = savedInstanceState.getBoolean("running");
+        savedTime = savedInstanceState.getLong("time");
     }
 }

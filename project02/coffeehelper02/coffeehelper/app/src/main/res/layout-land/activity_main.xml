@@ -63,7 +63,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
         android:background="#8CA646"
-        android:onClick="calcRatio"
         android:text="@string/calculate"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,16 +122,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <Chronometer
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="204dp"
-        android:text="@string/_00_00_00_000"
+        android:layout_marginBottom="216dp"
+        android:text="@string/OO_OO"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.792"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
