@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MobileAppFinal</string>
+    <string name="salsa">Salsa</string>
+    <string name="taco">Taco</string>
+    <string name="burrito">Burrito</string>
+    <string name="gluten_free">Gluten free</string>
+    <string name="name">Name</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="meat">MEAT</string>
+    <string name="veggie">VEGGIE</string>
+    <string name="build">Build</string>
+    <string name="build_a_burrito">Build a Burrito!</string>
+    <string name="sour_cream">Sour Cream</string>
+    <string name="cheese">Cheese</string>
+    <string name="guac">Guac</string>
+
+    <string-array name="places">
+        <item>The Hill</item>
+        <item>29th Street</item>
+        <item>Pearl</item>
+    </string-array>
+</resources>
